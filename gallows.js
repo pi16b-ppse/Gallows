@@ -65,6 +65,26 @@ function check(y) {
 		document.getElementById(element).style.border = "5px solid #00FF00";
 		document.getElementById(element).style.cursor = "default";
 		print_letter();
+		if(count == 0) {
+			var img = "picture_after/picture_0.png";
+			document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+		}
+		if(count == 1) {
+			var img = "picture_after/picture_1.png";
+			document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+		}
+		if(count == 2) {
+			var img = "picture_after/picture_2.png";
+			document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+		}
+		if(count == 3) {
+			var img = "picture_after/picture_3.png";
+			document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+		}
+		if(count == 5) {
+			var img = "picture_after/picture_4.png";
+			document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+		}
 	} else {
 		sound_no.play();
 		var element = "let" + y;
