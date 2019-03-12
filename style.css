@@ -1,20 +1,17 @@
-body
-{
+body {
     font-family: 'Inconsolata', monospace;
     font-size: 25px;
     font-weight: 500;
     color: #3e4e9f;
 }
 
-#container
-{
+#container {
     width: 1000px;
     margin-right: auto;
     margin-left: auto;
 }
 
-#block
-{
+#block {
     width: 1000px;
     margin-top: 50px;
     margin-bottom: 50px;
@@ -22,22 +19,19 @@ body
     text-align: center;
 }
 
-#gallows
-{
+#gallows {
     float: left;
     width: 500px;
     text-align: center;
 }
 
-#alphabet
-{
+#alphabet {
     float: left;
     width: 500px;
     text-align: center;
 }
 
-.letter 
-{
+.letter {
     float: left;
     height: 30px;
     width: 50px;
@@ -48,20 +42,17 @@ body
     cursor: pointer;
 }
 
-.letter:hover
-{
+.letter:hover {
     border: 5px solid #3e4e9f;
     background-color: #b0bde6;
 }
 
-.reset
-{
+.reset {
     color: #3e4e9f;
     cursor: pointer;
     font-size: 50px;
 }
 
-.reset:hover
-{
+.reset:hover {
     color: #b0bde6;
 }
