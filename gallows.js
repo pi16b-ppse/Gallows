@@ -30,7 +30,7 @@ let number = 0;
 
 // Вывод слова по буквам
 function printLetter() {
-	document.getElementById("block").innerHTML = word1;
+    document.getElementById("block").innerHTML = word1;
 };
 
 window.onload = start;
