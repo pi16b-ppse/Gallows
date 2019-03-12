@@ -1,67 +1,67 @@
 body
 {
-	font-family: 'Inconsolata', monospace;
-	font-size: 25px;
-	font-weight: 500;
-	color: #3e4e9f;
+    font-family: 'Inconsolata', monospace;
+    font-size: 25px;
+    font-weight: 500;
+    color: #3e4e9f;
 }
 
 #container
 {
-	width: 1000px;
-	margin-right: auto;
-	margin-left: auto;
+    width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 #block
 {
-	width: 1000px;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	font-size: 50px;
-	text-align: center;
+    width: 1000px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 50px;
+    text-align: center;
 }
 
 #gallows
 {
-	float: left;
-	width: 500px;
-	text-align: center;
+    float: left;
+    width: 500px;
+    text-align: center;
 }
 
 #alphabet
 {
-	float: left;
-	width: 500px;
-	text-align: center;
+    float: left;
+    width: 500px;
+    text-align: center;
 }
 
 .letter 
 {
-	float: left;
-	height: 30px;
-	width: 50px;
-	padding: 5px;
-	margin: 5px;
-	border: 5px solid #3e4e9f;
-	text-align: center;
-	cursor: pointer;
+    float: left;
+    height: 30px;
+    width: 50px;
+    padding: 5px;
+    margin: 5px;
+    border: 5px solid #3e4e9f;
+    text-align: center;
+    cursor: pointer;
 }
 
 .letter:hover
 {
-	border: 5px solid #3e4e9f;
-	background-color: #b0bde6;
+    border: 5px solid #3e4e9f;
+    background-color: #b0bde6;
 }
 
 .reset
 {
-	color: #3e4e9f;
-	cursor: pointer;
-	font-size: 50px;
+    color: #3e4e9f;
+    cursor: pointer;
+    font-size: 50px;
 }
 
 .reset:hover
 {
-	color: #b0bde6;
+    color: #b0bde6;
 }
