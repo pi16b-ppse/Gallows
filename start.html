@@ -1,196 +1,108 @@
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Gallows</title>
+	<meta charset="utf-8" />
+	<title>Gallows</title>
 </head>
 <style>
-@import url('https://fonts.googleapis.com/css?family=Lato');
-body, html {
-    font-family: 'Lato', sans-serif;
-    font-size: 25px;
-    font-weight: 500;
-    background: white;
+html, body {
+	background-color: #b0bde6;
 }
 
-.container {
-    display: block;
-    position: relative;
-    margin: 50px auto;
-    height: auto;
-    width: 500px;
+.transition {
+	transition: .5s cubic-bezier(0.5, 0, 0, 1.5)
+}
+
+.card {
+	background-color: white;
+	height: 400px;
+	width: 500px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+	overflow: hidden;
+}
+
+.card:hover {
+	box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.5);
+	height: 450px;
+	width: 550px;
+}
+
+.card_circle {
+	height: 400px;
+	width: 650px;
+	background: url(image/image_2.png) no-repeat;
+	background-size: cover;
+	position: absolute;
+	border-radius: 50%;
+	margin-left: -75px;
+	margin-top: -270px;
+}
+
+.card:hover .card_circle {
+	border-radius: 0;
+	margin-top: -125px;
 }
 
 h2 {
-    font-size: 30px;
-    text-align: center;
-    color: #3e4e9f;
+	text-align: center;
+	margin-top: 165px;
+	position: absolute;
+	z-index: 9999;
+	font-size: 20px;
+	color: #3e4e9f;
+	width: 100%;
+	font-family: 'Inconsolata', monospace;
 }
 
-.container ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    overflow: auto;
+h2 small {
+	font-weight: normal;
+	font-size: 65%;
+	color: rgba(0, 0, 0, 0.5);
 }
 
-ul li {
-    color: #e1e0e0;
-    display: block;
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 100px;
-    border-bottom: 2px solid #3e4e9f;
+.card:hover h2 {
+	margin-top: 85px;
+	color: white;
 }
 
-ul li input[type=radio] {
-    position: absolute;
-    visibility: hidden;
+.card:hover h2 small {
+	color: white;
 }
 
-ul li label {
-    display: block;
-    position: relative;
-    font-size: 25px;
-    padding: 25px 25px 25px 80px;
-    margin: 10px auto;
-    cursor: pointer;
-    -webkit-transition: all 0.25s linear;
+.cta-container {
+	text-align: center;
+	margin-top: 325px;
+	position: absolute;
+	z-index: 9999;
+	width: 100%;
+	font-family: 'Inconsolata', monospace;
 }
 
-ul li:hover label {
-    color: #b0bde6;
+.cta {
+	color: white;
+	border: 5px solid #3e4e9f;
+	background-color: #3e4e9f;
+	padding: 10px 25px;
+	border-radius: 50px;
+	font-size: 15px;
+	text-decoration: none;
+	font-weight: bold;
 }
 
-ul li .check {
-    display: block;
-    position: absolute;
-    border: 5px solid #e1e0e0;
-    border-radius: 100%;
-    height: 25px;
-    width: 25px;
-    top: 30px;
-    left: 20px;
-    transition: border .25s linear;
-    -webkit-transition: border .25s linear;
-}
-
-ul li:hover .check {
-    border: 5px solid #b0bde6;
-}
-
-ul li .check::before {
-    display: block;
-    position: absolute;
-    content: '';
-    border-radius: 100%;
-    height: 15px;
-    width: 15px;
-    top: 5px;
-    left: 5px;
-    margin: auto;
-    transition: background 0.25s linear;
-    -webkit-transition: background 0.25s linear;
-}
-
-input[type=radio]:checked ~ .check {
-    border: 5px solid #3e4e9f;
-}
-
-input[type=radio]:checked ~ .check::before {
-    background: #3e4e9f;
-}
-
-input[type=radio]:checked ~ label {
-    color: #3e4e9f;
-}
-
-.alert {
-    box-sizing: border-box;
-    background-color: #e1e0e0;
-    width: 100%;
-    position: fixed; 
-    bottom: 0;
-    left: 0;
-    padding: 25px 50px;
-}
-
-.alert h2 {
-    font-size: 20px;
-    text-align: left;
-    color: #3e4e9f;
-    margin-top: 0;
-}
-
-.alert p {
-    font-size: 15px;
-    text-align: justify;
-    color: #3e4e9f;
-}
-
-.rightpicture {
-    float: right;
-}
-
-.leftpicture {
-    float: left;
-}
-
-.center {
-    text-align: center;
-}
-
-a {
-    font-family: 'Lato', sans-serif;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: uppercase;
-    outline: none;
-    display: inline-block;
-    color: white;
-    padding: 20px 30px;
-    margin: 10px 20px;
-    border-radius: 10px;
-    background-image: linear-gradient(to right, #b0bde6 0%, #3e4e9f 50%, #b0bde6 100%);
-    background-size: 200% auto;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    transition: 0.25s;
-}
-
-a:hover {
-    background-position: right center;
+.card:hover .cta-container {
+	margin-top: 350px;
 }
 </style>
 <body>
-<img src="image/image_0.png" class="leftpicture" height="450" width="400">
-<img src="image/image_1.png" class="rightpicture" height="450" width="400">
-<div class="container">
-    <h2>Игра "Виселица"</h2>
-    <h2>Выберите категорию:</h2>
-    <ul>
-        <li>
-            <input type="radio" id="f-option" name="selector" checked="">
-            <label for="f-option">Еда</label>
-            <div class="check"></div>
-        </li>
-        <li>
-            <input type="radio" id="s-option" name="selector">
-            <label for="s-option">Спорт</label>
-            <div class="check"><div class="inside"></div></div>
-        </li>
-        <li>
-            <input type="radio" id="t-option" name="selector">
-            <label for="t-option">Программирование</label>
-            <div class="check"><div class="inside"></div></div>
-        </li>
-    </ul>
-</div>
-<div class="center">
-    <a href="main.html">Начать игру</a>
-</div>
-<footer class="alert">
-    <h2>Принцип игры "Виселица"</h2>
-    <p>Игроку загадывается слово, которое он должны угадать, используя буквы алфавита и возможность совершать ограниченное количество ошибок. Если игрок не угадал букву, которая входит в загаданное слово, то на экране к персонажу (которого по игре собираются повесить) начинают добавляться стул, виселица и петля. Игра завершается, когда не остаётся больше ходов или когда игрок угадал слово.</p>
-</footer>
+	<div class="card transition">
+		<h2 class="transition">Игра "Виселица"<br><small>Игроку загадывается слово, которое он должны угадать, используя буквы алфавита и возможность совершать ограниченное количество ошибок. Если игрок не угадал букву, которая входит в загаданное слово, то на экране к персонажу (которого по игре собираются повесить) начинают добавляться стул, виселица и петля. Игра завершается, когда не остаётся больше ходов или когда игрок угадал слово.</small></h2>
+		<div class="cta-container transition"><a href="main.html" class="cta">Играть</a></div>
+		<div class="card_circle transition"></div>
+	  </div>
 </body>
 </html>
