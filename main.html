@@ -3,7 +3,12 @@
     <meta charset="utf-8" />
     <title>Gallows</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="font.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    
     <script src="gallows.js"></script>
 </head>
 <style>
@@ -15,17 +20,26 @@ body {
 p.main {
     font-size: 50px;
     text-align: center;
+    margin-top: 50px;
 }
 </style>
 <body>
     <p class="main">Игра "Виселица"</p>
     <div id="container">
         <div id="block"></div>
-        <div id="gallows">
-            <img src="picture_befor/picture_0.png" alt="" />
-        </div>
+        <div id="gallows"><img src="picture_befor/picture_0.png" alt="" /></div>
         <div id="alphabet"></div>
-        <div style="clear both;"></div>
+        <div class="container">
+            <input id="modal" type="checkbox">
+            <label class="modal-button" for="modal"><i class="fa fa-cog fa-spin"></i><span>Подсказка</span></label>
+            <label class="modal-background" for="modal"></label>
+            <div class="modal-content">
+                <label class="modal-close" for="modal">&#10005;</label>
+                <h2>Игра "Виселица"</h2>
+                <p>Слова относятся к теме программирования.</p>
+                <label class="modal-content-button" for="modal">OK</label>
+            </div>
+        </div>
     </div>
 </body>
 </html>
