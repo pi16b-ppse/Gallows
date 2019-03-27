@@ -1,108 +1,108 @@
 <html>
 <head>
-	<meta charset="utf-8" />
-	<title>Gallows</title>
+    <meta charset="utf-8" />
+    <title>Gallows</title>
 </head>
 <style>
 html, body {
-	background-color: #b0bde6;
+    background-color: #b0bde6;
 }
 
 .transition {
-	transition: .5s cubic-bezier(0.5, 0, 0, 1.5)
+    transition: .5s cubic-bezier(0.5, 0, 0, 1.5)
 }
 
 .card {
-	background-color: white;
-	height: 400px;
-	width: 500px;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-	overflow: hidden;
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
 }
 
 .card:hover {
-	box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.5);
-	height: 450px;
-	width: 550px;
+    box-shadow: 0px 50px 50px rgba(0, 0, 0, 0.5);
+    height: 450px;
+    width: 550px;
 }
 
 .card_circle {
-	height: 400px;
-	width: 650px;
-	background: url(image/image_2.png) no-repeat;
-	background-size: cover;
-	position: absolute;
-	border-radius: 50%;
-	margin-left: -75px;
-	margin-top: -270px;
+    height: 400px;
+    width: 650px;
+    background: url(image/image_2.png) no-repeat;
+    background-size: cover;
+    position: absolute;
+    border-radius: 50%;
+    margin-left: -75px;
+    margin-top: -270px;
 }
 
 .card:hover .card_circle {
-	border-radius: 0;
-	margin-top: -125px;
+    border-radius: 0;
+    margin-top: -125px;
 }
 
 h2 {
-	text-align: center;
-	margin-top: 165px;
-	position: absolute;
-	z-index: 9999;
-	font-size: 20px;
-	color: #3e4e9f;
-	width: 100%;
-	font-family: 'Inconsolata', monospace;
+    text-align: center;
+    margin-top: 165px;
+    position: absolute;
+    z-index: 9999;
+    font-size: 20px;
+    color: #3e4e9f;
+    width: 100%;
+    font-family: 'Inconsolata', monospace;
 }
 
 h2 small {
-	font-weight: normal;
-	font-size: 65%;
-	color: rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+    font-size: 65%;
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .card:hover h2 {
-	margin-top: 85px;
-	color: white;
+    margin-top: 85px;
+    color: white;
 }
 
 .card:hover h2 small {
-	color: white;
+    color: white;
 }
 
 .cta-container {
-	text-align: center;
-	margin-top: 325px;
-	position: absolute;
-	z-index: 9999;
-	width: 100%;
-	font-family: 'Inconsolata', monospace;
+    text-align: center;
+    margin-top: 325px;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    font-family: 'Inconsolata', monospace;
 }
 
 .cta {
-	color: white;
-	border: 5px solid #3e4e9f;
-	background-color: #3e4e9f;
-	padding: 10px 25px;
-	border-radius: 50px;
-	font-size: 15px;
-	text-decoration: none;
-	font-weight: bold;
+    color: white;
+    border: 5px solid #3e4e9f;
+    background-color: #3e4e9f;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .card:hover .cta-container {
-	margin-top: 350px;
+    margin-top: 350px;
 }
 </style>
 <body>
-	<div class="card transition">
-		<h2 class="transition">Игра "Виселица"<br><small>Игроку загадывается слово, которое он должны угадать, используя буквы алфавита и возможность совершать ограниченное количество ошибок. Если игрок не угадал букву, которая входит в загаданное слово, то на экране к персонажу (которого по игре собираются повесить) начинают добавляться стул, виселица и петля. Игра завершается, когда не остаётся больше ходов или когда игрок угадал слово.</small></h2>
-		<div class="cta-container transition"><a href="main.html" class="cta">Играть</a></div>
-		<div class="card_circle transition"></div>
-	  </div>
+    <div class="card transition">
+        <h2 class="transition">Игра "Виселица"<br><small>Игроку загадывается слово, которое он должны угадать, используя буквы алфавита и возможность совершать ограниченное количество ошибок. Если игрок не угадал букву, которая входит в загаданное слово, то на экране к персонажу (которого по игре собираются повесить) начинают добавляться стул, виселица и петля. Игра завершается, когда не остаётся больше ходов или когда игрок угадал слово.</small></h2>
+        <div class="cta-container transition"><a href="main.html" class="cta">Играть</a></div>
+        <div class="card_circle transition"></div>
+    </div>
 </body>
 </html>
