@@ -51,6 +51,7 @@ body {
     color: #3e4e9f;
     cursor: pointer;
     font-size: 50px;
+    text-decoration: none;
 }
 
 .reset:hover {
