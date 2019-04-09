@@ -99,6 +99,13 @@ String.prototype.contains = function (a, b) {
     }
 }
 
+// Удаление элемента из массива по значению
+function removeByValue(array, value) {
+    return array.filter(function (_element, _index) {
+        return value != _element;
+    });
+}
+
 // Проверка на правильность введённых букв загаданного слова и вывод результатов
 function check(y) {
     var correct = false;
