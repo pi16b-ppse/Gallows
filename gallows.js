@@ -99,10 +99,10 @@ String.prototype.contains = function (a, b) {
     }
 }
 
-// Удаление элемента из массива по значению
-function removeByValue(array, value) {
-    return array.filter(function (_element, _index) {
-        return value != _element;
+// Удаление элемента из массива по индексу
+function removeByIndex(array, index){
+    return array.filter(function(_element, _index){
+        return index != _index;
     });
 }
 
