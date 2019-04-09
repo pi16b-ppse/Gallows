@@ -30,6 +30,17 @@ let count = 0;
 
 let number = 0;
 
+let correctCount;
+
+if (sessionStorage.getItem('correctCount') == null) {
+    correctCount = 0;
+    alert(correctCount);
+}
+if (sessionStorage.getItem('correctCount') > 0) {
+    correctCount = sessionStorage.getItem('correctCount');
+    alert(correctCount);
+}
+
 // Вывод слова по буквам
 function printLetter() {
     document.getElementById("block").innerHTML = word1;
@@ -58,7 +69,6 @@ String.prototype.contains = function(a, b) {
         return this.substr(0, a) + b + this.substr(a + 1);
     }
 }
-
 // Проверка на правильность введённых букв загаданного слова и вывод результатов
 function check(y) {
     var correct = false;
@@ -78,23 +88,23 @@ function check(y) {
         printLetter();
         if(count == 0) {
             var img = "picture_after/picture_0.png";
-            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" height="450" width="400" />';
         }
         if(count == 1) {
             var img = "picture_after/picture_1.png";
-            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" height="450" width="400" />';
         }
         if(count == 2) {
             var img = "picture_after/picture_2.png";
-            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" height="450" width="400" />';
         }
         if(count == 3) {
             var img = "picture_after/picture_3.png";
-            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" height="450" width="400" />';
         }
         if(count == 5) {
             var img = "picture_after/picture_4.png";
-            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+            document.getElementById("gallows").innerHTML = '<img src="'+ img +'" height="450" width="400" />';
         }
     } else {
         soundNo.play();
@@ -106,9 +116,12 @@ function check(y) {
         document.getElementById(element).setAttribute("onclick", ";");
         count++;
         var img = "picture_befor/picture_"+ count + ".png";
-        document.getElementById("gallows").innerHTML = '<img src="'+ img +'" alt="" />';
+        document.getElementById("gallows").innerHTML = '<img src="'+ img +'" height="450" width="400" />';
     }
     if(word0 == word1) {
+        correctCount++;
+        sessionStorage.setItem('correctCount', correctCount);
+        alert(correctCount);
         document.getElementById("alphabet").innerHTML = "ВЫ ПОБЕДИЛИ!" + '<p>ЗАГАДАННОЕ СЛОВО: ' + word0 + '</p>'
         + '<p><span class="reset" onclick="location.reload();">СЫГРАЕТЕ ЕЩЁ РАЗ?</span></p>';
     }
