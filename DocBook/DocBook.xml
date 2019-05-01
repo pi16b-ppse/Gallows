@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<article>
+    <articleinfo>
+        <title>Документация к игре "Виселица"</title>
+        <authorgroup>
+            <author>
+                <firstname>Разработала документацию к игре "Виселица" - Фесенко Ольга</firstname>
+            </author>
+        </authorgroup>
+    </articleinfo>
+    <section>
+        <title>Принцип игры "Виселица"</title>
+        <para>Игроку загадывается слово, которое он должны угадать, используя буквы алфавита и возможность совершать ограниченное количество ошибок. Если игрок не угадал букву, которая входит в загаданное слово, то на экране к персонажу (которого по игре собираются повесить) начинают добавляться стул, виселица и петля. Игра завершается, когда не остаётся больше ходов или когда игрок угадал слово.</para>
+        <para>Играть онлайн: <ulink  url='https://olgafo.github.io/Gallows/start/'>https://olgafo.github.io/Gallows/start/</ulink></para>
+    </section>
+    <section>
+        <title>Иллюстрации к игре "Виселица"</title>
+        <orderedlist>
+            <listitem>
+                <para><emphasis>Стартовая страница</emphasis></para>
+                    <para>
+                        <mediaobject>
+                            <imageobject>
+                                <imagedata fileref="images/screenshot_0.png" scale="200" align="center"/>
+                            </imageobject>
+                        </mediaobject>
+                    </para>
+            </listitem>
+            <listitem>
+                <para><emphasis>Главная страница</emphasis></para>
+                <para>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="images/screenshot_1.png" scale="200" align="center"/>
+                        </imageobject>
+                    </mediaobject>
+                </para>
+            </listitem>
+        </orderedlist>
+    </section>
+    <section>
+        <title>Детали реализации</title>
+        <para>Особенности реализации отдельного функционала представлены ниже:</para>
+        <section>
+            <title>Вывод блока с буквами</title>
+            <programlisting><![CDATA[
+    function start() {
+        var content = "";
+        for (i = 0; i <= 32; i++) {
+            var element = "let" + i;
+            content = content + '<div class="letter" onclick="check(' + i + ')" id="' + element + '">' + letters[i] + '</div>';
+            if ((i + 1) % 6 == 0) {
+                content = content + '<div style="clear:both;"></div>';
+            }
+        }
+        document.getElementById("alphabet").innerHTML = content;
+        printLetter();
+    };
+            ]]></programlisting>
+        </section>
+        <section>
+            <title>Выставление букв на нужную позицию в загаданном слове</title>
+            <programlisting><![CDATA[
+    String.prototype.contains = function (a, b) {
+        if (a > this.length - 1) {
+            return this.toString();
+        } else {
+            return this.substr(0, a) + b + this.substr(a + 1);
+        }
+    }
+            ]]></programlisting>     
+        </section>
+        <section>
+            <title>Сохранение и сборс количества угаданных слов</title>
+            <note>
+                <para>При обновлении страницы количество угаданных слов сохраняется в переменную.</para>
+                <para>Когда количество угаданных слов равняется количеству слов в массиве, значение переменной обнуляется.</para>
+            </note>
+            <programlisting><![CDATA[
+    if (sessionStorage.getItem('correctCount') == null) {
+        correctCount = 0;
+    }
+
+    if (sessionStorage.getItem('correctCount') > 0) {
+        correctCount = sessionStorage.getItem('correctCount');
+    }
+
+    if (sessionStorage.getItem('correctCount') == ususus) {
+        correctCount = 0;
+    }
+            ]]></programlisting>
+        </section>
+    </section>
+</article>
