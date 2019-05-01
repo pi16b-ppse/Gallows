@@ -116,6 +116,7 @@ let correctCount;
 if (sessionStorage.getItem('correctCount') == null) {
     correctCount = 0;
 }
+
 if (sessionStorage.getItem('correctCount') > 0) {
     correctCount = sessionStorage.getItem('correctCount');
 }
