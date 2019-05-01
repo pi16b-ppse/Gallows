@@ -1,14 +1,50 @@
+/**
+ * Массив слов.
+ * @type {array}
+ */
 let array = ["ПРОГРАММИСТ", "ПРОГРАММА", "ИНКАПСУЛЯЦИЯ", "НАСЛЕДОВАНИЕ", "ПОЛИМОРФИЗМ", "ПАТТЕРН", "РЕКУРСИЯ", "КОД",
     "КЛАСС", "ПЕРЕМЕННАЯ", "МАССИВ", "БИТ", "БАЙТ", "БАЗА ДАННЫХ", "ЗАПРОС", "МАКРОС",
     "ФОРМА", "ФУНКЦИЯ", "ДАННЫЕ", "КОНСТАНТА", "ГРАФ", "ДЕРЕВО", "МАССИВ", "МАТРИЦА",
     "КОМПИЛЯТОР"
 ];
 
+/**
+ * Размер массива слов, который в процессе игры будет уменьшаться.
+ * @type {number}
+ */
 let aL;
 
+/**
+ * Размер массива слов, который в процессе игры будет оставаться неизменным.
+ * @constant {number}
+ * @default
+ */
 const ususus = array.length;
 
-let random, word0, length, word1;
+/**
+ * Рандомно выбранное слово из массива слов.
+ * @type {string}
+ */
+let random;
+
+/**
+ * Загаданное слово.
+ * @type {string}
+ */
+let word0;
+
+/**
+ * Длина загадонного слова.
+ * @type {number}
+ */
+let length;
+
+/**
+ * Слово, введённое игроком.
+ * @type {string}
+ */
+let word1;
+
 
 if (sessionStorage.getItem('aL') == null) {
     aL = ususus;
@@ -45,18 +81,36 @@ for (i = 0; i < length; i++) {
     }
 }
 
+/**
+ * Звук при правильно угаданной букве.
+ * @constant {object}
+ */
 const soundYes = new Audio("sound/sound_yes.wav");
 
+/**
+ * Звук при неправильно угаданной букве.
+ * @constant {object}
+ */
 const soundNo = new Audio("sound/sound_no.wav");
 
+/**
+ * Массив букв.
+ * @type {array}
+ */
 var letters = ["А", "Б", "В", "Г", "Д", "Е", "Ё", "Ж", "З", "И", "Й", "К", "Л", "М", "Н", "О",
     "П", "Р", "С", "Т", "У", "Ф", "Х", "Ц", "Ч", "Ш", "Щ", "Ъ", "Ы", "Ь", "Э", "Ю", "Я"
 ];
 
+/**
+ * Количество прав на ошибку.
+ * @type {number}
+ */
 let count = 0;
 
-let number = 0;
-
+/**
+ * Количество угаданных слов.
+ * @type {number}
+ */
 let correctCount;
 
 if (sessionStorage.getItem('correctCount') == null) {
@@ -70,14 +124,23 @@ if (sessionStorage.getItem('correctCount') == ususus) {
     correctCount = 0;
 }
 
-// Вывод слова по буквам
+/**
+ * Вывод загадонного слова по буквам.
+ * @return {void}
+ */
 function printLetter() {
     document.getElementById("block").innerHTML = word1;
 };
 
+/**
+ * Загрузка всей страницы со всеми её ресурсами.
+ */
 window.onload = start;
 
-// Вывод букв
+/**
+ * Вывод блока с буквами.
+ * @return {void}
+ */
 function start() {
     var content = "";
     for (i = 0; i <= 32; i++) {
@@ -91,6 +154,13 @@ function start() {
     printLetter();
 };
 
+/**
+ * Выставление букв на нужную позицию в загаданном слове.
+ * @function wordLetters
+ * @param {number} a позиция букв загаданного слова
+ * @param {number} b позиция буквы, которую ввёл пользователь
+ * @return {string} Строка с буквами, которые ввёл пользователь.
+ */
 String.prototype.contains = function (a, b) {
     if (a > this.length - 1) {
         return this.toString();
@@ -99,14 +169,23 @@ String.prototype.contains = function (a, b) {
     }
 }
 
-// Удаление элемента из массива по индексу
-function removeByIndex(array, index){
-    return array.filter(function(_element, _index){
+/**
+ * Удаление угаданного слова из массива слов по индексу.
+ * @param {array} array массив слов
+ * @param {number} index индекс угаданного слова
+ * @returns {array} Копия массива без удалённого угаданного слова.
+ */
+function removeByIndex(array, index) {
+    return array.filter(function (_element, _index) {
         return index != _index;
     });
 }
 
-// Проверка на правильность введённых букв загаданного слова и вывод результатов
+/**
+ * Проверка на правильность введённых букв загаданного слова и вывод результатов.
+ * @param {number} y буква загаданного слова
+ * @returns {void}
+ */
 function check(y) {
     var correct = false;
     for (i = 0; i < length; i++) {
