@@ -4,7 +4,7 @@
 # `Иллюстрации к игре`
 <div align="center">
   <img src="screenshot//screenshot_0.png" width="750" alt="Стартовая страница"/>
-  > Стартовая страница
+  <p><h1>Стартовая страница</p>
   <img src="screenshot//screenshot_1.png" width="750" alt="Главная страница"/>
-  > Главная страница
+  <p>Главная страница</p>
 </div>
