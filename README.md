@@ -5,6 +5,8 @@
 >> Играть онлайн: https://olgafo.github.io/Gallows/start
 >>
 >> JSDoc: https://olgafo.github.io/Gallows/JSDoc/
+>>
+>> DocBook: https://olgafo.github.io/Gallows/DocBook/out/html
 # `Иллюстрации к игре "Виселица"`
 <div align="center">
   <img src="screenshot//screenshot_0.png" width="750" alt="Стартовая страница"/>
